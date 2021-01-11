@@ -55,13 +55,13 @@ def main():
         last_chat_name = last_update['message']['chat']['first_name']
 
         if last_chat_text.lower() in greetings and 9 <= hour < 13:
-            greet_bot.send_message(last_chat_id, 'Доброе утро, {}'.format(last_chat_name))
+            greet_bot.send_message(last_chat_id, 'Доброе утро, {} {}'.format(last_chat_name, hour))
 
         elif last_chat_text.lower() in greetings and 12 <= hour < 17:
-            greet_bot.send_message(last_chat_id, 'Добрый день, {}'.format(last_chat_name))
+            greet_bot.send_message(last_chat_id, 'Добрый день, {} {}'.format(last_chat_name, hour))
 
         elif last_chat_text.lower() in greetings and 17 <= hour < 23:
-            greet_bot.send_message(last_chat_id, 'Добрый вечер, {}'.format(last_chat_name))
+            greet_bot.send_message(last_chat_id, 'Добрый вечер, {} {}'.format(last_chat_name, hour))
 
         new_offset = last_update_id + 1
 
